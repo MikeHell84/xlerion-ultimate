@@ -55,7 +55,7 @@ Ahora tu proyecto debería estar visible en `https://github.com/MikeHell84/xleri
 Si deseas ejecutar todos los pasos de inicialización y subida en un solo comando (teniendo en cuenta que algunos pasos pueden fallar si ya están configurados):
 
 ```bash
-git init && git add . && git commit -m "Initial commit: Setup xlerion-ultimate project structure" && (git remote get-url origin 2>$null || git remote add origin https://github.com/MikeHell84/xlerion-ultimate.git) && git branch -M main && git push -u origin main
+git init && git add . && git commit -m "Initial commit: Setup xlerion-ultimate project structure" && (git remote get-url origin 2>$null || git remote add origin https://github.com/MikeHell84/xlerion-ultimate.git) && git branch -M main && git pull origin main --rebase && git push -u origin main
 ```
 
 **Nota:**

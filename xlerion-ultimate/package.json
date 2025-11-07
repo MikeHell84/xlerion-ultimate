@@ -1,0 +1,41 @@
+{
+  "name": "xlerion-ultimate",
+  "version": "0.1.0",
+  "private": true,
+  "trigger.dev": {
+    "endpointId": "xlerion-ultimate"
+  },
+  "dependencies": {
+    "@react-aria/button": "^3.14.2",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.78.0",
+    "@trigger.dev/nextjs": "latest",
+    "@trigger.dev/react": "latest",
+    "@trigger.dev/sdk": "latest",
+    "bootstrap": "^5.3.8",
+    "framer-motion": "^12.23.24",
+    "next": "^14.2.33",
+    "react": "18.3.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "18.3.1",
+    "react-icons": "^5.5.0",
+    "sass": "^1.93.3"
+  },
+  "devDependencies": {
+    "@trigger.dev/build": "^3.3.17",
+    "@trigger.dev/cli": "latest",
+    "@types/react": "19.2.2",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.2.3",
+    "typescript": "5.4.5"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "dev:all": "concurrently \"npm run dev\" \"npm run xlerionml_service\"",
+    "xlerionml_service": "cd ../xlerion-ml && uvicorn main:app --reload --host 0.0.0.0"
+  }
+}

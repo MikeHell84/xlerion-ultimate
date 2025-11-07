@@ -1,0 +1,77 @@
+🧱 Estructura de la Página Web Oficial de Xlerion
+🏠 1. Inicio
+Objetivo: Presentar la esencia de Xlerion en segundos.
+Contenido:
+- Logo y eslogan: “Modularidad que transforma. Diagnóstico que empodera.”
+- Imagen o video teaser del toolkit o pelijuego.
+- Botón de acceso rápido a portafolio y contacto.
+- Frase destacada: “Desde Nocaima para el mundo: innovación empírica con impacto cultural.”
+
+🧬 2. Filosofía
+Objetivo: Comunicar tu misión, visión y valores.
+Contenido:
+- Misión: Potenciar el desarrollo técnico moderno con soluciones modulares que anticipan errores y promueven colaboración sostenible.
+- Visión: Ser referente latinoamericano en diseño de toolkits inteligentes que integren técnica, creatividad y escalabilidad.
+- Valores: Empatía, documentación, modularidad, autosuficiencia, impacto social.
+
+🛠️ 3. Soluciones
+Objetivo: Mostrar tus servicios y productos técnicos.
+Contenido:
+- Toolkits modulares para videojuegos AAA, multimedia y visión por computadora.
+- Sistemas de logging, diagnóstico, comparadores de rendimiento.
+- Branding técnico-creativo con lógica modular.
+- Documentación estructurada para mantenimiento y escalabilidad.
+
+🎮 4. Proyectos
+Objetivo: Exhibir tu portafolio y casos de uso.
+Contenido:
+- Total Darkness – Pelijuego interactivo (con teaser, sinopsis, capturas).
+- Módulos activos del Xlerion Toolkit.
+- Prototipos, demos, colaboraciones.
+- Participación en Colombia 4.0 y CoCrea.
+
+📚 5. Documentación
+Objetivo: Compartir tu enfoque autosuficiente y empoderador.
+Contenido:
+- Guías técnicas y de instalación.
+- Diagramas modulares.
+- Manuales de uso y mantenimiento.
+- Filosofía de documentación como legado.
+
+🧠 6. Sobre el Fundador
+Objetivo: Humanizar la marca y mostrar tu trayectoria.
+Contenido:
+- Biografía de Miguel Eduardo Rodríguez Martínez.
+- Enfoque empírico y neurodivergente como motor creativo.
+- Experiencia en arte digital, modelado 3D, scripting y defensa legal.
+- Frase personal: “La frustración técnica y burocrática es mi combustible para crear soluciones que empoderan.”
+
+🤝 7. Convocatorias y Alianzas
+Objetivo: Mostrar tu participación institucional y abrir puertas.
+Contenido:
+- Postulación a CoCrea 2025.
+- Participación en Hackathon IA COL4.0.
+- Invitación a inversionistas y aliados culturales.
+- Carta de intención descargable para aportantes.
+
+📞 8. Contacto
+Objetivo: Facilitar comunicación directa.
+Contenido:
+- Formulario de contacto.
+- Correo electrónico profesional.
+- WhatsApp con botón directo.
+- Redes sociales (LinkedIn, GitHub, YouTube si aplica).
+
+🧩 9. Blog / Bitácora
+Objetivo: Compartir avances, reflexiones y documentación viva.
+Contenido:
+- Entradas sobre desarrollo de módulos.
+- Reflexiones sobre modularidad, autosuficiencia y neurodivergencia.
+- Actualizaciones de eventos y convocatorias.
+
+🛡️ 10. Legal y Privacidad
+Objetivo: Cumplir con normativas y mostrar transparencia.
+Contenido:
+- Política de privacidad.
+- Términos de uso.
+- Licencias de software y contenido.

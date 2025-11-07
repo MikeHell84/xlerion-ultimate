@@ -1,0 +1,10 @@
+.footer {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+}
+
+.homepageFooter {
+  position: relative;
+  z-index: 1;
+}

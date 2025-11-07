@@ -1,0 +1,102 @@
+🏠 Inicio
+Encabezado principal:
+Xlerion – Soluciones Disruptivas
+Modularidad que transforma. Diagnóstico que empodera.
+Texto de bienvenida:
+Desde Nocaima, Cundinamarca, nace una propuesta empírica y neurodivergente que redefine la forma en que creamos, automatizamos y documentamos soluciones técnicas para la industria creativa. Xlerion es más que una empresa: es una filosofía modular con impacto cultural.
+Botones destacados:
+- Ver portafolio
+- Contactar al fundador
+- Descargar dossier institucional
+
+🧬 Filosofía
+Misión:
+Potenciar el desarrollo técnico moderno con soluciones modulares que anticipan errores, optimizan procesos y promueven colaboración sostenible entre creadores, técnicos y comunidades.
+Visión:
+Ser referente latinoamericano en el diseño de toolkits inteligentes que integren técnica, creatividad, documentación y escalabilidad para la industria cultural y tecnológica.
+Valores:
+- Empatía técnica
+- Autosuficiencia creativa
+- Documentación como legado
+- Modularidad como principio
+- Impacto cultural y territorial
+
+🛠️ Soluciones
+Texto principal:
+Xlerion ofrece herramientas técnicas diseñadas para entornos exigentes como videojuegos AAA, multimedia avanzada y visión por computadora. Cada solución está pensada para ser modular, escalable y autosuficiente.
+Servicios destacados:
+- Toolkits modulares con interfaces jerárquicas y adaptativas
+- Sistemas de logging, diagnóstico y comparadores de rendimiento
+- Branding técnico-creativo con lógica visual y simbólica
+- Documentación estructurada para mantenimiento y transferencia de conocimiento
+- Integración con motores como Unreal Engine, Unity y Blender
+
+🎮 Proyectos
+Texto principal:
+Cada proyecto de Xlerion es una manifestación de su filosofía: modularidad, documentación y empoderamiento técnico. Aquí presentamos nuestras iniciativas más representativas.
+Proyectos destacados:
+- Total Darkness – Pelijuego Interactivo: Adaptación de obra literaria original a experiencia narrativa inmersiva con decisiones ramificadas, entornos 3D y cinemáticas filosóficas.
+- Xlerion Toolkit: Conjunto de módulos activos para diagnóstico, logging y rendimiento, diseñado para entornos técnicos complejos.
+- Participación en Colombia 4.0: Presentación institucional y pitch de impacto cultural y técnico.
+- Postulación a CoCrea 2025: Proyecto cultural con enfoque empírico, neurodivergente y territorial.
+
+📚 Documentación
+Texto principal:
+La documentación es parte esencial del legado de Xlerion. Cada solución incluye guías claras, diagramas modulares y manuales de uso que permiten su mantenimiento, réplica y evolución.
+Contenido:
+- Manuales técnicos por módulo
+- Diagramas de flujo y arquitectura
+- Guías de instalación y configuración
+- Filosofía de documentación como herramienta de empoderamiento
+
+🧠 Sobre el Fundador
+Texto principal:
+Miguel Eduardo Rodríguez Martínez es un creador empírico con enfoque neurodivergente, especializado en arte digital, modelado 3D, scripting y defensa legal. Su trayectoria autodidacta lo ha llevado a construir soluciones técnicas con impacto cultural desde territorios no centralizados.
+Frase destacada:
+“La frustración técnica y burocrática es mi combustible para crear soluciones que empoderan.”
+Datos adicionales:
+- Fundador de Xlerion TechLab
+- Autodidacta en entornos técnicos y creativos
+- Defensor de derechos del consumidor y procesos autosuficientes
+- Creador de la obra literaria Total Darkness
+
+🤝 Convocatorias y Alianzas
+Texto principal:
+Xlerion participa activamente en convocatorias culturales y tecnológicas, buscando alianzas que fortalezcan su impacto y validen su enfoque empírico.
+Contenido:
+- Postulación a CoCrea 2025 (modalidad PAT)
+- Participación en Hackathon IA COL4.0
+- Invitación a inversionistas culturales
+- Carta de intención de aportes descargable
+- Espacio para aliados institucionales
+
+📞 Contacto
+Texto principal:
+¿Quieres colaborar, invertir o conocer más sobre Xlerion? Estamos listos para conversar.
+Formulario de contacto:
+- Nombre
+- Correo electrónico
+- Mensaje
+Datos adicionales:
+Correo: contacto@xlerion.tech
+
+WhatsApp: [Botón directo]
+
+Redes: ArtStation, Behance, LinkedIn, Instagram, X, Indiegogo, Kickstarter, GitHub, YouTube 
+
+🧩 Blog / Bitácora
+Texto principal:
+Reflexiones, avances y documentación viva del proceso creativo y técnico detrás de Xlerion.
+Entradas sugeridas:
+- Cómo nació Total Darkness
+- Filosofía modular aplicada a videojuegos
+- Documentar para empoderar
+- Participación en Colombia 4.0
+- Diagnóstico técnico como herramienta cultural
+
+🛡️ Legal y Privacidad
+Contenido:
+- Política de privacidad de datos
+- Términos de uso del sitio y los toolkits
+- Licencias de software y contenido
+- Declaración de derechos del consumidor

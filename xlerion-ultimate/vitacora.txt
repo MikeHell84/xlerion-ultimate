@@ -1,0 +1,122 @@
+# Bitácora de Desarrollo del Proyecto Xlerion Ultimate
+
+## Resumen General de Avances
+
+Este documento detalla las acciones y modificaciones realizadas en el proyecto Xlerion Ultimate hasta la fecha.
+
+### 1. Configuración Inicial y Estructura del Proyecto
+- **Identificación de Tecnologías:** Next.js (App Router), TypeScript, React, Supabase, Trigger.dev.
+- **Evaluación de Estado:** Análisis inicial del proyecto basado en `arch.txt` y `package.json`.
+- **Creación de Estructura Base:**
+    - `src/app/layout.tsx`: Layout raíz de la aplicación.
+    - `src/app/page.tsx`: Página de inicio.
+    - `src/app/globals.css`: Estilos globales.
+    - `src/components/`: Directorio para componentes reutilizables.
+    - `src/components/MenuBar.tsx`: Componente de la barra de navegación.
+    - `src/components/Footer.tsx`: Componente del pie de página.
+    - Páginas de marcador de posición para todas las secciones principales (`sobre-nosotros`, `servicios-y-productos`, etc.) basadas en `documentoEmpresa.txt`.
+    - Contenido inicial de todas las páginas poblado con información de `documentoEmpresa.txt`.
+
+### 2. Transición de Estilos: Tailwind CSS a Bootstrap
+- **Intento Fallido con Tailwind CSS:** Se encontraron problemas con la instalación y configuración de Tailwind CSS (`ETARGET` error, `npx` ejecutable no encontrado).
+- **Migración a Bootstrap:**
+    - Desinstalación de `tailwindcss`, `postcss` y `autoprefixer`.
+    - Eliminación de `tailwind.config.js` y `postcss.config.js`.
+    - Eliminación de directivas de Tailwind de `src/app/globals.css`.
+    - Instalación de `bootstrap` y `react-bootstrap`.
+    - Importación de `bootstrap/dist/css/bootstrap.min.css` en `src/app/layout.tsx`.
+    - Reescritura de `src/components/MenuBar.tsx` para usar componentes `Navbar` de React-Bootstrap.
+    - Eliminación de clases de Tailwind de `src/app/page.tsx`.
+
+### 3. Mejoras de Interfaz y Experiencia de Usuario
+- **Manejo de Componentes Cliente/Servidor:**
+    - Adición de `"use client";` a `src/components/MenuBar.tsx` y `src/app/page.tsx`.
+    - Creación de `src/components/ClientNavbar.tsx` para encapsular componentes de React-Bootstrap.
+    - Importación dinámica (`dynamic` con `ssr: false`) de `MenuBar`, `Footer`, `FontSizeAdjuster` y `ParallaxVideoScroll` en `src/app/layout.tsx` para asegurar el renderizado del lado del cliente.
+- **Replicación de Diseño (basado en `colombiatechfest.ai-hackathon.co`):**
+    - **Estilos Globales:** Fondo negro muy oscuro y color primario azul brillante (`#00FFFF`) definidos en `src/app/globals.css`.
+    - **Tipografía:** Implementación de Google Fonts (Inter para cuerpo, Montserrat para encabezados) y ajuste de tamaños/pesos de fuente en `src/app/page.tsx` y `globals.css`.
+    - **Sección Parallax:**
+        - Implementación de un efecto parallax de video de fondo (`ParallaxVideoScroll.tsx`).
+        - Adición de botones de Llamada a la Acción (CTA) en la sección parallax de la página de inicio.
+    - **Tarjetas (Misión, Visión, Valores):**
+        - Adición de imágenes de marcador de posición.
+        - Implementación de efectos hover (`card-hover-effect`).
+        - Redondeado de una esquina de las tarjetas (`card-rounded-corner`).
+        - Truncamiento de texto en las tarjetas para una longitud consistente.
+        - Implementación de un modal para mostrar el contenido completo al hacer clic en "Ver más".
+        - Estilización de la imagen dentro del modal para que sea más grande y consistente.
+    - **Barra de Navegación:**
+        - Propiedad `sticky-top` para que el menú se fije al hacer scroll.
+        - Línea animada "láser" debajo del menú.
+    - **Modal:**
+        - Efecto de borde brillante animado alrededor de todo el modal (`modal-glowing-border`).
+- **Accesibilidad/Usabilidad:**
+    - Implementación de un botón flotante para ajustar el tamaño de la fuente (`FontSizeAdjuster.tsx`).
+    - Establecimiento del tamaño de fuente predeterminado a 12px.
+
+### 4. Problemas Pendientes y Recordatorios
+- **Marcador de Posición `xlerionml_service`:** Se ha identificado que el comando real para iniciar el servicio ML de Python es `cd ../xlerion-ml && uvicorn main:app --reload`. Por lo tanto, el comando para iniciar todos los servidores (Next.js y el servicio ML) concurrentemente es `npm run dev:all`. Esto resuelve el bloqueo del script `dev:all`.
+- **Carga de Imágenes/Video:** Los errores `net::ERR_NAME_NOT_RESOLVED` para las imágenes y el video de marcador de posición son problemas relacionados con la red del usuario. Es crucial verificar la conexión a internet, la configuración de DNS o posibles bloqueos de firewall/proxy. Las URLs de marcador de posición deberán ser reemplazadas por activos reales alojados de forma fiable.
+
+### 5. Avances Recientes (4 de noviembre de 2025)
+- **Posicionamiento del Pie de Página (Footer):**
+    - Se implementó un pie de página fijo para la página de inicio, siempre visible en la parte inferior de la ventana (viewport).
+    - Se pasó una prop `isHomePage` de `LayoutClientWrapper.tsx` a `Footer.tsx` para un estilo condicional.
+    - Se aplicó condicionalmente la clase `homepageFooter` en `Footer.tsx`.
+    - Se definió `homepageFooter` en `Footer.module.css` con `position: fixed`, `bottom: 0`, `left: 0` y `width: 100%`.
+    - Se añadió `padding-bottom: 100px` al área de contenido principal en `LayoutClientWrapper.tsx` para evitar que el contenido se superponga con el pie de página fijo.
+- **Altura de la Sección Parallax:**
+    - Se ajustó la `min-height` de la `.parallax-section` en `globals.css` de `100vh` a `80vh` para hacerla más corta.
+
+### 6. Avances Recientes (5 de noviembre de 2025)
+- **Resolución de Errores de Build y Runtime:**
+    - Se resolvió el error `useRef is not defined` en `ClientNavbar.tsx` añadiendo `import React` explícitamente.
+    - Se resolvió el error `Parsing ecmascript source code failed` y `next` command not found mediante la actualización de dependencias (`next` a `14.2.3`, `eslint-config-next` a `14.2.3`, `typescript` a `5.4.5`) y una limpieza completa de `node_modules` y `.next` seguida de `npm install`.
+    - Se corrigió el error `import/export cannot be used outside of module code` eliminando contenido duplicado en `LayoutClientWrapper.tsx`.
+- **Ajuste de Posicionamiento de la Barra de Ubicación y Tiempo:**
+    - Se movió la barra de ubicación y tiempo (`top-info-bar`) para que aparezca debajo del menú principal (`DynamicMenuBar`) en `LayoutClientWrapper.tsx`.
+    - Se añadió un padding de 5px a la parte superior de la barra de ubicación y tiempo para asegurar su visibilidad y separación del menú principal.
+
+---
+**Comandos para Iniciar Servidores:**
+- **Frontend (Next.js):**
+    - Navegar al directorio `xlerion-ultimate`: `cd xlerion-ultimate`
+    - Iniciar servidor de desarrollo: `npm run dev` o `yarn dev`
+- **Backend (FastAPI - asumiendo `xlerion-ml` es el backend):**
+    - Navegar al directorio `xlerion-ml`: `cd xlerion-ml`
+    - Iniciar servidor FastAPI: `uvicorn main:app --reload` (asumiendo `main.py` es el punto de entrada y `app` es la instancia de FastAPI)
+
+**URLs:**
+- **Frontend:** `http://localhost:3000`
+- **Backend:** `http://localhost:8000`
+
+---
+**Próximos Pasos Sugeridos:**
+1.  Resolver el problema de `xlerionml_service` proporcionando el comando real.
+2.  Reemplazar todas las URLs de imágenes y video de marcador de posición con activos reales.
+3.  Continuar con la implementación de las secciones restantes de la página web.
+4.  Considerar la implementación de las "Tecnologías y Frameworks para Interactividad Web" mencionadas en `documentoEmpresa.txt` para futuras mejoras, si es necesario.
+
+---
+## Comandos de Desarrollo
+
+Aquí tienes un resumen de los comandos para ejecutar el proyecto:
+
+### Iniciar solo el frontend (Next.js)
+Este comando inicia la página web.
+```
+npm run dev
+```
+
+### Iniciar solo el backend (Python)
+Este comando inicia el servicio de Python que proporciona los datos del menú.
+```
+npm run xlerionml_service
+```
+
+### Iniciar ambos (frontend y backend) al mismo tiempo
+Este es el comando recomendado para el desarrollo, ya que inicia todo lo que necesitas con un solo comando.
+```
+npm run dev:all
+```

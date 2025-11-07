@@ -1,0 +1,8 @@
+Checkpoint created on 2025-11-05 at 19:40:00.
+
+Summary of changes:
+- Resolved various build and runtime errors related to Next.js, React, and Turbopack.
+- Downgraded Next.js to 14.2.3, eslint-config-next to 14.2.3, and typescript to 5.4.5.
+- Cleaned and reinstalled node_modules and .next directory.
+- Corrected duplicate content in LayoutClientWrapper.tsx.
+- Adjusted the positioning of the location and time bar to be below the main menu with a 5px padding.

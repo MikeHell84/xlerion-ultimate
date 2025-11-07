@@ -49,3 +49,17 @@ git push -u origin main
 ```
 
 Ahora tu proyecto debería estar visible en `https://github.com/MikeHell84/xlerion-ultimate.git`.
+
+## Comando Único para Subir el Proyecto (Secuencial)
+
+Si deseas ejecutar todos los pasos de inicialización y subida en un solo comando (teniendo en cuenta que algunos pasos pueden fallar si ya están configurados):
+
+```bash
+git init && git add . && git commit -m "Initial commit: Setup xlerion-ultimate project structure" && git remote add origin https://github.com/MikeHell84/xlerion-ultimate.git && git branch -M main && git push -u origin main
+```
+
+**Nota:**
+*   Asegúrate de personalizar el mensaje del commit (`"Initial commit: Setup xlerion-ultimate project structure"`) según sea necesario.
+*   Si el repositorio ya está inicializado (`git init` ya se ejecutó), el primer `git init` no hará nada o mostrará una advertencia.
+*   Si el remoto `origin` ya existe, `git remote add origin ...` fallará. Puedes omitir esa parte si ya lo tienes configurado.
+*   Este comando asume que quieres que tu rama principal se llame `main`.

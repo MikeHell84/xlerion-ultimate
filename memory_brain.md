@@ -60,7 +60,7 @@ Plataforma multisectorial que integra módulos de IA, contenido dinámico y un p
 ### Comando Único para Subir el Proyecto a GitHub (Secuencial)
 
 ```bash
-git init && git add . && git commit -m "Initial commit: Setup xlerion-ultimate project structure" && git remote add origin https://github.com/MikeHell84/xlerion-ultimate.git && git branch -M main && git push -u origin main
+git init && git add . && git commit -m "Initial commit: Setup xlerion-ultimate project structure" && (git remote get-url origin > /dev/null 2>&1 || git remote add origin https://github.com/MikeHell84/xlerion-ultimate.git) && git branch -M main && git push -u origin main
 ```
 
 **Nota:**

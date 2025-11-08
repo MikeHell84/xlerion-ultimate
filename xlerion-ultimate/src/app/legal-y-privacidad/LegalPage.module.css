@@ -1,0 +1,43 @@
+.parallaxContainer {
+  background-image: url('/LogoXlerion.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.legalPage {
+  background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent dark background */
+  color: #f0f0f0;
+}
+
+.legalNav .nav-link {
+  color: #a0a0a0;
+  background-color: transparent;
+  border: 1px solid #444;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+}
+
+.legalNav .nav-link.active, 
+.legalNav .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(0, 123, 255, 0.2);
+  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.tabContent {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444;
+  min-height: 100%;
+}
+
+.tabContent h3 {
+  color: #00aaff;
+}

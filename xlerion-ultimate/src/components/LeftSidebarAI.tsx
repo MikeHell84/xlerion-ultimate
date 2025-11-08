@@ -60,12 +60,11 @@ const renderMessageContent = (msg: Message, handleSendMessage: (message: string)
                   const optionNumber = match[1];
                   const optionText = match[2];
                   return (
-                  <MagneticEffect>
+                  <MagneticEffect key={idx}>
                     <Button
-                      key={idx}
                       variant="outline-light"
                       className="text-start d-flex align-items-center"
-                      onClick={() => handleSendMessage(optionNumber)}
+                      onClick={() => handleSendMessage(optionText)}
                       style={{ marginBottom: '8px' }}
                     >
                       {menuIcons[optionNumber]} {optionText}
@@ -126,20 +125,32 @@ export default function LeftSidebarAI({ show, handleClose, startPageTransition }
       setInput('');
 
       try {
-        const response = await fetch('http://localhost:8000/api/chat', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ message: userMessage }),
-        });
+        let data;
+        if (userMessage === 'menu') {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/menu`, {
+            method: 'GET',
+          });
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const menuItems = await response.json();
+          data = {
+            answer: {
+              intro: '¡Hola! Soy tu asistente de Xlerion. ¿En qué puedo ayudarte hoy? Selecciona una opción o escribe tu pregunta:',
+              options: menuItems.map((item: any, index: number) => `${index + 1}. ${item.title}`),
+            },
+          };
+        } else {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/ask?question=${encodeURIComponent(userMessage)}`, {
+            method: 'GET',
+          });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          data = await response.json();
         }
-
-        const data = await response.json();
-        setMessages((prevMessages) => [...prevMessages, { sender: 'ai', text: data.response }]);
+        setMessages((prevMessages) => [...prevMessages, { sender: 'ai', text: data.answer }]);
       } catch (error) {
         console.error('Error sending message to AI backend:', error);
         setMessages((prevMessages) => [
@@ -158,18 +169,18 @@ export default function LeftSidebarAI({ show, handleClose, startPageTransition }
       <Offcanvas.Body className="d-flex flex-column p-3" style={{ height: '100%' }}>
         <div className="flex-grow-1 overflow-auto mb-3" style={{ scrollbarWidth: 'thin', scrollbarColor: '#888 #555' }}>
           {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`d-flex mb-2 ${msg.sender === 'user' ? 'justify-content-end' : 'justify-content-start'}`}
-            >
-              <div
-                className={`p-2 rounded-3 shadow-sm ${msg.sender === 'user' ? 'bg-primary text-white' : 'bg-dark text-primary'}`}
-                style={{ maxWidth: '75%' }}
-              >
-                {renderMessageContent(msg, handleSendMessage, startPageTransition)}
-              </div>
-            </div>
-          ))}
+                          <div
+                            key={index}
+                            className={`d-flex mb-2 ${msg.sender === 'user' ? 'justify-content-end' : 'justify-content-start'}`}
+                          >
+                            <div
+                              className={`p-2 rounded-3 shadow-sm ${msg.sender === 'user' ? 'bg-primary text-white' : 'ai-message-bubble text-primary d-flex align-items-start'}`}
+                              style={{ maxWidth: '75%' }}
+                            >
+                              {msg.sender === 'ai' && <FaRobot className="me-2 mt-1" size={20} />}
+                              <div>{renderMessageContent(msg, handleSendMessage, startPageTransition)}</div>
+                            </div>
+                          </div>          ))}
           <div ref={messagesEndRef} />
         </div>
         <InputGroup className="mt-auto">

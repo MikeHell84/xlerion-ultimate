@@ -224,8 +224,15 @@ export default function Home() {
               )}
             </div>
       <Modal show={showModal} onHide={handleClose} centered size="lg" dialogClassName="modal-dark modal-glowing-border">
-        <Modal.Header closeButton closeVariant="white" className="bg-dark text-white border-bottom border-secondary">
+        <Modal.Header className="bg-dark text-white border-bottom border-secondary">
           <Modal.Title className="text-primary">{modalContent.title}</Modal.Title>
+          <button
+            type="button"
+            className="btn-close btn-close-white"
+            onClick={handleClose}
+            aria-label="Close"
+            title="Cerrar"
+          ></button>
         </Modal.Header>
         <Modal.Body className="bg-dark text-white">
           {modalContent.image && <img src={modalContent.image} alt={modalContent.title} className="img-fluid mb-3" style={{ maxHeight: '400px', width: '100%', objectFit: 'contain' }} />}

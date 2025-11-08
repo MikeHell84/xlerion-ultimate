@@ -68,7 +68,7 @@ async def get_menu_items():
 @app.get("/api/contacto")
 async def get_contact_info():
     contact_info = {
-        "email": "contacto@xlerion.com",
+        "email": "contactus@xlerion.com",
         "whatsapp": "https://wa.me/573001234567",
         "whatsappLab": "https://wa.me/573007654321",
         "socialMedia": [

@@ -48,3 +48,4 @@ venv/
 
 # Media files
 media/
+*.aep

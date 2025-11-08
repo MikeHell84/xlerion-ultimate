@@ -609,3 +609,54 @@ Cuando ocurre un error crítico que impide el desarrollo (ej. un crash de la apl
     ````
 
 5.  **Actualizar Registro Central (Opcional pero recomendado):** Añadir una referencia al nuevo archivo de log en la sección `project_logbook.md` para tener un índice central de problemas resueltos.
+-----
+## 10. Problemas Resueltos en la Sesión Actual
+
+### 1. Error de importación de ASGI App (Backend)
+- **Problema:** `ERROR: Error loading ASGI app. Could not import module "app".`
+- **Causa:** Entorno incorrecto o dependencias no instaladas para el backend FastAPI.
+- **Solución:** Se proporcionaron instrucciones para activar el entorno virtual, instalar `requirements.txt` e iniciar el servidor FastAPI. También se listaron las dependencias (`thefuzz`, `python-Levenshtein`) en `requirements.txt`.
+
+### 2. Advertencia de Accesibilidad en Botones (Frontend)
+- **Problema:** `Buttons must have discernible text: Element has no title attribute` en la página de inicio.
+- **Causa:** Botón de cierre del Modal de React-Bootstrap generado automáticamente sin `aria-label` o `title`.
+- **Solución:** Se reemplazó el botón de cierre automático del modal en `page.tsx` por un botón manual con `aria-label="Close"` y `title="Cerrar"`.
+
+### 3. Advertencia de Regla `@import` en CSS (Frontend)
+- **Problema:** `Define @import rules at the top of the stylesheet`.
+- **Causa:** Sintaxis `@import url()` en `globals.scss` que algunas herramientas de linting pueden preferir estandarizar.
+- **Solución:** Se cambió la sintaxis de importación de la fuente de Google en `globals.scss` de `@import url(...)` a `@import '...'`.
+
+### 4. Error 404 y ECONNREFUSED en llamada a API (Frontend a Backend)
+- **Problema:** `GET http://localhost:3000/api/ask?question=menu 404 (Not Found)` y `Error: connect ECONNREFUSED 192.168.1.3:8000`.
+- **Causa:** Desajuste en el objetivo de la API entre el frontend y el backend (`.env.local` vs `next.config.js`) y el backend no accesible en la dirección esperada.
+- **Solución:** Se configuró `NEXT_PUBLIC_BACKEND_URL=http://localhost:8000` en `.env.local` y se modificó `LeftSidebarAI.tsx` para usar esta variable. Se ajustó la regla `rewrites` en `next.config.js` para que el `destination` también sea `http://localhost:8000`. Se enfatizó la necesidad de reiniciar ambos servidores.
+
+### 5. Asistente de IA no mostraba opciones de menú
+- **Problema:** El asistente de IA mostraba el mensaje por defecto en lugar de las opciones de menú al abrirse.
+- **Causa:** El frontend llamaba al endpoint `/api/ask?question=menu`, que no estaba diseñado para devolver opciones de menú.
+- **Solución:** Se modificó `LeftSidebarAI.tsx` para llamar al endpoint `/api/menu` para las opciones iniciales y se ajustó `app.py` para devolver un objeto de respuesta con `text` y `link` para las respuestas del `knowledge_base`. Se añadieron nuevas entradas a `knowledge_base.py` para los títulos del menú.
+
+### 6. Advertencia de `key` prop en `LeftSidebarAI.tsx`
+- **Problema:** `Warning: Each child in a list should have a unique "key" prop. Check the render method of LeftSidebarAI.`
+- **Causa:** La prop `key` estaba en el `Button` en lugar de en el componente `MagneticEffect` dentro del `map` de las opciones del menú.
+- **Solución:** Se movió la prop `key` del `Button` al `MagneticEffect` en `LeftSidebarAI.tsx`.
+
+### 7. Estilo del Menú Principal (Múltiples líneas y formato)
+- **Problema:** Los botones del menú principal se mostraban en dos líneas y sin mayúsculas.
+- **Causa:** Los títulos del menú (`item.title`) eran demasiado largos y faltaban clases de estilo apropiadas.
+- **Solución:** Se modificó `ClientNavbar.tsx` para usar `item.shortTitle` y se añadieron las clases de utilidad de Bootstrap `text-uppercase` y `text-nowrap` a los elementos del menú.
+
+### 8. Botón redundante del Asistente de IA en el Menú Principal
+- **Problema:** Existía un botón para el asistente de IA en la barra de navegación principal, lo cual era redundante.
+- **Causa:** El botón estaba hardcodeado en `ClientNavbar.tsx`.
+- **Solución:** Se eliminó el bloque de código del botón del Asistente de IA de `ClientNavbar.tsx`.
+
+### 9. Iconos en el Menú Principal y Burbuja de Contexto del AI
+- **Implementación:** Se añadieron iconos Font Awesome a cada elemento del menú principal en `ClientNavbar.tsx`.
+- **Implementación:** Se implementó una "burbuja de contexto" visual distintiva para las respuestas del AI en `LeftSidebarAI.tsx` y `globals.scss`, incluyendo diferente color de fondo, borde brillante, sombra y un icono `FaRobot`.
+
+### 10. Botón "Ver Más" no visible
+- **Problema:** El botón "Ver Más" no aparecía en la interfaz.
+- **Causa:** Posiblemente un problema de renderizado o estilo que lo hacía invisible o no interactuable.
+- **Solución:** Se revisó y ajustó la lógica de renderizado y los estilos CSS para asegurar que el botón "Ver Más" fuera visible y funcional.

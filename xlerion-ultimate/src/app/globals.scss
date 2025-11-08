@@ -67,25 +67,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .parallax-video-background {
-  position: fixed; /* Changed from absolute to fixed */
-  top: 120px; /* Adjusted to start below the top-info-bar */
-  left: 0; /* Changed from 50% */
-  width: 100vw; /* Changed from auto, use viewport width */
-  height: calc(150vh - 120px); /* Changed from auto, use remaining viewport height */
-  object-fit: cover; /* Added to ensure video covers the area */
-  z-index: -1; /* Changed from 0 to -1 to ensure it's behind everything */
-  background-size: cover; /* Keep this, though object-fit is more relevant for video */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .parallax-section::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 1; /* Place overlay above background image */
+  z-index: -1; /* Place overlay above background image */
 }
 
 .parallax-content {
@@ -194,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1%;
+  padding-bottom: 0.1%;
 }
 
 .homepage-layout {
@@ -317,4 +316,43 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); /* Subtle shadow */
   border-radius: 10px; /* Rounded corners */
   padding: 10px; /* Add some padding */
+}
+
+.parallax-image-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 5px 4px rgba(77, 71, 71, 0.74);
+  margin-top: 0; /* Ensure no top margin */
+  padding-top: 0; /* Ensure no top padding */
+}
+
+.parallax-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* Make it taller to allow for parallax movement */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(calc(var(--scroll-y) * -0.5)) translateX(var(--mouse-x, 0px)) translateY(var(--mouse-y, 0px)); /* Apply parallax effect with mouse */
+  transition: transform 0.3s ease-out; /* Smooth transition for mouse movement */
+  z-index: -1;
+}
+
+.parallax-content-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  text-align: center;
+  width: 100%; /* Ensure it takes full width */
+  height: 100%; /* Ensure it takes full height */
+  display: flex; /* Use flexbox for internal centering */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
 }

@@ -70,19 +70,61 @@ Contenido:
 - Carta de intención de aportes descargable
 - Espacio para aliados institucionales
 
-📞 Contacto
-Texto principal:
-¿Quieres colaborar, invertir o conocer más sobre Xlerion? Estamos listos para conversar.
+Contacto
+
+Texto principal: ¿Quieres colaborar, invertir o conocer más sobre Xlerion? Estamos listos para conversar.
+
 Formulario de contacto:
-- Nombre
-- Correo electrónico
-- Mensaje
+
+Nombre
+
+Correo electrónico
+
+Mensaje
+
 Datos adicionales:
-Correo: contacto@xlerion.tech
+
+Correos electrónicos:
+
+contacto@xlerion.tech
+
+contactus@xlerion.com
+
+totaldarkness@xlerion.com
+
+support@xlerion.com
+
+sales@xlerion.com
+
+admin@xlerion.com
+
+branding@xlerion.com
+
+toolkit@xlerion.com
+
+neuro@xlerion.com
+
+mike@xlerion.com
 
 WhatsApp: [Botón directo]
 
-Redes: ArtStation, Behance, LinkedIn, Instagram, X, Indiegogo, Kickstarter, GitHub, YouTube 
+
+
+Redes:
+
+LinkedIn : https://www.linkedin.com/company/xlerion
+
+Indiegogo : https://www.indiegogo.com/es/profile/miguel_rodriguez-martinez_edb9?redirect_reason#/overview
+
+Kickstarter : https://www.kickstarter.com/profile/xlerionstudios
+
+Patreon : https://www.kickstarter.com/profile/xlerionstudios
+
+Instagram : https://www.instagram.com/ultimatexlerion/
+
+Facebook : https://www.facebook.com/xlerionultimate
+
+Behance : https://www.behance.net/xlerionultimate
 
 🧩 Blog / Bitácora
 Texto principal:

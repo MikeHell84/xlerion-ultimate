@@ -156,7 +156,7 @@ export default function LayoutClientWrapper({
         <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, position: 'relative' }}>
           <DynamicMenuBar startPageTransition={startPageTransition} handleToggleAISidebar={handleToggleAISidebar} topOffset={`0px`} onHeightChange={handleNavbarHeightChange} />
 
-          <div style={{ flexGrow: 1, paddingTop: `${effectiveNavbarHeight + 25}px` }}>
+          <div style={{ flexGrow: 1, paddingTop: `${effectiveNavbarHeight}px` }}>
             <div style={{ position: 'relative' }}>
               <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
                 <PageTransitionProvider startPageTransition={startPageTransition}>
@@ -175,7 +175,7 @@ export default function LayoutClientWrapper({
                 )}
               </AnimatePresence>
     
-              <DynamicParallaxVideoScroll />
+              <DynamicParallaxVideoScroll navbarHeight={effectiveNavbarHeight} />
               <DynamicLeftSidebarAI show={showAISidebar} handleClose={() => setShowAISidebar(false)} startPageTransition={startPageTransition} />
               <ReadContentSidebar show={showReaderSidebar} handleClose={() => setShowReaderSidebar(false)} /> {/* Use the new ReadContentSidebar */}
               <FloatingActionButton onPress={handleToggleAISidebar} isSidebarOpen={showAISidebar}>

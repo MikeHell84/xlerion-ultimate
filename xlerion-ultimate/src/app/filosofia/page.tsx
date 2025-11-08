@@ -1,6 +1,7 @@
 "use client";
 
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import ParallaxImageSection from '../../components/ParallaxImageSection';
 export default function Filosofia() {
   const valores = [
     'Empatía técnica',
@@ -11,17 +12,14 @@ export default function Filosofia() {
   ];
 
   return (
-    <div className="parallax-section"> {/* Use existing parallax-section class */}
-      <video
-        autoPlay
-        loop
-        muted
-        className="parallax-video-background" // Use existing parallax-video-background class
-        src="/parallaxX.mp4" // Path to your video
-      ></video>
-      <Container className="my-5 text-white parallax-content"> {/* Use existing parallax-content class */}
-        <h1 className="text-center mb-5">Nuestra Filosofía</h1>
-        
+    <>
+      <ParallaxImageSection
+        imageUrl="/images/parallax/filosofia-parallax.jpg"
+        title="Nuestra Filosofía"
+        subtitle="Principios que guían nuestra innovación y desarrollo."
+        height="70vh"
+      />
+      <Container className="my-5 text-white"> {/* Main content container */}
         <Row className="g-4">
           <Col md={6} lg={4}>
             <Card className="h-100 bg-dark text-white card-glassmorphism">
@@ -59,6 +57,6 @@ export default function Filosofia() {
           </Col>
         </Row>
       </Container>
-    </div>
+    </>
   );
 }

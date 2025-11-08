@@ -3,6 +3,7 @@
 import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import ParallaxImageSection from '../../components/ParallaxImageSection';
 
 
 
@@ -80,19 +81,13 @@ export default function SobreNosotros() {
 
   return (
     <>
-      {/* Parallax Video Section */}
-      <div className="parallax-section d-flex align-items-center justify-content-center text-white text-center">
-        {data.heroVideo && (
-          <video autoPlay loop muted className="parallax-video-background">
-            <source src={data.heroVideo} type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
-        )}
-        <Container className="parallax-content">
-          <h1 className="display-2 fw-bold mb-4">{data.title}</h1>
-          <p className="lead fs-5 mb-5">{data.lead}</p>
-        </Container>
-      </div>
+      {/* Parallax Image Section */}
+      <ParallaxImageSection
+        imageUrl={data.heroImage}
+        title={data.title}
+        subtitle={data.lead}
+        height="70vh"
+      />
 
       <Container className="my-5">
         {data.sections.map((section, index) => {

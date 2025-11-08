@@ -2,7 +2,11 @@
 
 import { useEffect } from 'react';
 
-export default function ParallaxVideoScroll() {
+interface ParallaxVideoScrollProps {
+  navbarHeight: number;
+}
+
+export default function ParallaxVideoScroll({ navbarHeight }: ParallaxVideoScrollProps) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -15,6 +19,10 @@ export default function ParallaxVideoScroll() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--navbar-height', `${navbarHeight}px`);
+  }, [navbarHeight]);
 
   return null; // This component doesn't render anything visible
 }

@@ -143,7 +143,7 @@ export default function Home() {
                 </Row>
       
                 <Row className="mb-5">
-                  <Col md={4}>
+                  <Col md={4} className="mb-4">
                     <Card className="shadow-lg bg-dark text-white border-0 card-hover-effect h-100 card-rounded-corner">
                       <div style={{ height: '200px', overflow: 'hidden' }}>
                         <div style={{ height: '200px', overflow: 'hidden', backgroundColor: '#343a40', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: '2rem' }}>Misión</div>
@@ -162,7 +162,7 @@ export default function Home() {
                     </Card>
                   </Col>
       
-                  <Col md={4}>
+                  <Col md={4} className="mb-4">
                     <Card className="shadow-lg bg-dark text-white border-0 card-hover-effect h-100 card-rounded-corner">
                       <div style={{ height: '200px', overflow: 'hidden' }}>
                         <div style={{ height: '200px', overflow: 'hidden', backgroundColor: '#343a40', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', fontSize: '2rem' }}>Visión</div>

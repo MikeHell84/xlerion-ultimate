@@ -70,7 +70,6 @@ export default function ClientNavbar({ startPageTransition, handleToggleAISideba
   return (
     <Navbar ref={navbarRef} bg="dark" variant="dark" expand="lg" className="shadow-sm" style={{ overflowX: 'hidden', zIndex: 10004, top: topOffset, position: 'fixed', width: '100%' }}>
       <Container>
-        <MagneticEffect>
           <Navbar.Brand
             onClick={() => startPageTransition('/')}
             className="text-white fw-bold fs-4"
@@ -78,15 +77,13 @@ export default function ClientNavbar({ startPageTransition, handleToggleAISideba
           >
             <img src="/LogoX-01.svg" alt="Xlerion Ultimate Logo" style={{ height: '40px' }} />
           </Navbar.Brand>
-        </MagneticEffect>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {menuItems.map((item, index) => {
               if (item.isDropdown && item.dropdownItems) {
                 return (
-                  <MagneticEffect key={item.href}>
-                    <NavDropdown title={<><span className="d-flex align-items-center">{menuIcons[item.shortTitle]} {item.shortTitle}</span></>} id={`basic-nav-dropdown-${index}`} className="text-white mx-2 text-uppercase text-nowrap">
+                  <NavDropdown key={item.href} title={<><span className="d-flex align-items-center">{menuIcons[item.shortTitle]} {item.shortTitle}</span></>} id={`basic-nav-dropdown-${index}`} className="text-white mx-2 text-uppercase text-nowrap">
                       {item.dropdownItems.map((dropdownItem) => (
                         <a
                           key={dropdownItem.href}
@@ -98,19 +95,17 @@ export default function ClientNavbar({ startPageTransition, handleToggleAISideba
                         </a>
                       ))}
                     </NavDropdown>
-                  </MagneticEffect>
                 );
               }
               return (
-              <MagneticEffect key={item.href}>
-                <a
+              <a
+                  key={item.href}
                   onClick={() => startPageTransition(item.href)}
                   className="nav-link text-white mx-2 text-uppercase text-nowrap d-flex align-items-center"
                   style={{ cursor: 'pointer' }}
                 >
                   {menuIcons[item.shortTitle]} {item.shortTitle}
                 </a>
-              </MagneticEffect>
               );
             })}
 

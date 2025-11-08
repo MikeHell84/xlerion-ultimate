@@ -1,6 +1,7 @@
 "use client";
 
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import ParallaxImageSection from '../../components/ParallaxImageSection';
 
 export default function ConvocatoriasYAlianzas() {
   const contenido = [
@@ -33,40 +34,36 @@ export default function ConvocatoriasYAlianzas() {
   ];
 
   return (
-    <div className="main-content-area">
-      <div className="parallax-section d-flex align-items-center justify-content-center text-white text-center" style={{ height: 'calc(100vh - 86px)' }}>
-        <video autoPlay loop muted className="parallax-video-background">
-          <source src="/parallaxX.mp4" type="video/mp4" />
-        </video>
-        <Container className="parallax-content">
-          <h1 className="display-2 fw-bold mb-4">Convocatorias y Alianzas</h1>
-          <p className="lead fs-6 mb-5">
-            Xlerion participa activamente en convocatorias culturales y tecnológicas, buscando alianzas que fortalezcan su impacto y validen su enfoque empírico.
-          </p>
-          
-          <Row className="g-4">
-            {contenido.map((item, index) => (
-              <Col md={6} lg={4} key={index}>
-                <Card className="h-100 bg-dark text-white card-glassmorphism">
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title as="h5" className="text-primary">{item.title}</Card.Title>
-                    <Card.Text className="flex-grow-1">{item.description}</Card.Text>
-                    {item.download ? (
-                      <a href={item.link} download className="btn btn-outline-primary mt-auto">
-                        Descargar
-                      </a>
-                    ) : (
-                      <Button variant="outline-primary" href={item.link} className="mt-auto">
-                        Ver más
-                      </Button>
-                    )}
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>
-    </div>
+    <>
+      <ParallaxImageSection
+        imageUrl="/images/parallax/convocatorias-alianzas-parallax.jpg"
+        title="Convocatorias y Alianzas"
+        subtitle="Xlerion participa activamente en convocatorias culturales y tecnológicas, buscando alianzas que fortalezcan su impacto y validen su enfoque empírico."
+        height="70vh"
+      />
+      <Container className="my-5 text-white"> {/* Main content container */}
+        <Row className="g-4">
+          {contenido.map((item, index) => (
+            <Col md={6} lg={4} key={index}>
+              <Card className="h-100 bg-dark text-white card-glassmorphism">
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title as="h5" className="text-primary">{item.title}</Card.Title>
+                  <Card.Text className="flex-grow-1">{item.description}</Card.Text>
+                  {item.download ? (
+                    <a href={item.link} download className="btn btn-outline-primary mt-auto">
+                      Descargar
+                    </a>
+                  ) : (
+                    <Button variant="outline-primary" href={item.link} className="mt-auto">
+                      Ver más
+                    </Button>
+                  )}
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { Container, Accordion } from 'react-bootstrap';
+import ParallaxImageSection from '../../components/ParallaxImageSection';
 
 export default function LegalYPrivacidad() {
   const legalSections = [
@@ -23,26 +24,25 @@ export default function LegalYPrivacidad() {
   ];
 
   return (
-    <div className="main-content-area">
-      <div className="parallax-section d-flex align-items-center justify-content-center text-white text-center" style={{ height: 'calc(100vh - 86px)' }}>
-        <video autoPlay loop muted className="parallax-video-background">
-          <source src="/parallaxX.mp4" type="video/mp4" />
-        </video>
-        <Container className="parallax-content">
-          <h1 className="display-2 fw-bold mb-4">Legal y Privacidad</h1>
-          
-          <Accordion defaultActiveKey="0" flush>
-            {legalSections.map((section, index) => (
-              <Accordion.Item eventKey={String(index)} key={index} className="bg-dark text-white border border-secondary rounded mb-2">
-                <Accordion.Header className="bg-dark text-white">{section.title}</Accordion.Header>
-                <Accordion.Body className="bg-dark text-white-50">
-                  {section.content}
-                </Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </Container>
-      </div>
-    </div>
+    <>
+      <ParallaxImageSection
+        imageUrl="/images/parallax/legal-privacidad-parallax.jpg"
+        title="Legal y Privacidad"
+        subtitle="Información importante sobre nuestros términos y condiciones."
+        height="70vh"
+      />
+      <Container className="my-5 text-white"> {/* Main content container */}
+        <Accordion defaultActiveKey="0" flush>
+          {legalSections.map((section, index) => (
+            <Accordion.Item eventKey={String(index)} key={index} className="bg-dark text-white border border-secondary rounded mb-2">
+              <Accordion.Header className="bg-dark text-white">{section.title}</Accordion.Header>
+              <Accordion.Body className="bg-dark text-white-50">
+                {section.content}
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </Container>
+    </>
   );
 }
